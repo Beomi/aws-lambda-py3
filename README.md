@@ -1,4 +1,6 @@
-# Pre compiled python3 packages for AWS Lambda
+# aws-lambda-py3
+
+## Pre compiled python3 packages for AWS Lambda
 
 This repo was made by inspire with [ryfeus](https://github.com/ryfeus)'s [lambda-packs](https://github.com/ryfeus/lambda-packs)
 
@@ -12,6 +14,7 @@ This repo was made by inspire with [ryfeus](https://github.com/ryfeus)'s [lambda
 ## Supporting packages
 
 - requests + bs4
+- requests + bs4 + lxml
 
 ## How to use
 
@@ -102,6 +105,40 @@ Sample Event:
 
 - requests 2.18.4
 - beautifulsoup4 4.6.0 (with bs4 0.0.1)
+
+#### Suggested Configure
+
+- Memory: 128M (minimum)
+- Timeout: 5s
+
+### requests + bs4 + lxml
+
+#### Description
+
+Package for crawling static HTML with requests & parsing HTML with BeautifulSoup and lxml.
+
+Demo code returns first result's title from google search.
+
+Sample Event: 
+
+```python
+# Sample
+## Input Event object
+{
+  "keyword": "linear+algebra"
+}
+
+## Return value
+{
+  "title": "선형대수학 - 위키백과, 우리 모두의 백과사전"
+}
+```
+
+#### Packages version
+
+- requests 2.18.4
+- beautifulsoup4 4.6.0 (with bs4 0.0.1)
+- lxml 4.1.1
 
 #### Suggested Configure
 
