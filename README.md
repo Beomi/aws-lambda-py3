@@ -15,6 +15,7 @@ This repo was made by inspire with [ryfeus](https://github.com/ryfeus)'s [lambda
 
 - requests + bs4
 - requests + bs4 + lxml
+- requests + bs4 + selenium + PhantomJS
 
 ## How to use
 
@@ -144,3 +145,38 @@ Sample Event:
 
 - Memory: 128M (minimum)
 - Timeout: 5s
+
+### requests + bs4 + selenium + PhantomJS
+
+#### Description
+
+Package for crawling static HTML with Selenium-PhantomJS & parsing HTML with BeautifulSoup.
+
+Demo code returns first result's title from google search.
+
+Sample Event: 
+
+```python
+# Sample
+## Input Event object
+{
+  "keyword": "aws+lambda"
+}
+
+## Return value
+{
+  "title": "AWS Lambda – 제품 기능"
+}
+```
+
+#### Packages version
+
+- requests 2.18.4
+- beautifulsoup4 4.6.0 (with bs4 0.0.1)
+- selenium 3.9.0
+- PhantomJS 2.1.1
+
+#### Suggested Configure
+
+- Memory: 256MB
+- Timeout: 15s
