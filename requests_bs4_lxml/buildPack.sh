@@ -28,14 +28,14 @@ gather_pack () {
     cd /home/
     source env/bin/activate
 
-    rm -rf lambdapack
-    mkdir lambdapack
-    cd lambdapack
+    rm -rf python
+    mkdir python
+    cd python
 
     cp -R /home/env/lib/python3.6/site-packages/* .
     cp -R /home/env/lib64/python3.6/site-packages/* .
-    cp /outputs/*.py /home/lambdapack/
-    echo "original size $(du -sh /home/lambdapack | cut -f1)"
+    cp /outputs/*.py /home/python/
+    echo "original size $(du -sh /home/python | cut -f1)"
 
     # cleaning libs
     rm -rf external
@@ -50,10 +50,11 @@ gather_pack () {
     rm -r wheel-*
     rm easy_install.py
     find . -name \*.pyc -delete
-    echo "stripped size $(du -sh /home/lambdapack | cut -f1)"
+    echo "stripped size $(du -sh /home/python | cut -f1)"
 
     # compressing
-    zip -FS -r9 /outputs/pack.zip * > /dev/null
+    cd /home
+    zip -FS -r9 /outputs/pack.zip ./python > /dev/null
     echo "compressed size $(du -sh /outputs/pack.zip | cut -f1)"
 }
 

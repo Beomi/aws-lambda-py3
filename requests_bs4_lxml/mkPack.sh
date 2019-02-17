@@ -1,5 +1,5 @@
 run_container () {
-    docker run -v $(pwd):/outputs --name lambdapack_requests -d amazonlinux:latest tail -f /dev/null
+    docker run -v $(pwd):/outputs --name lambdapack_requests -d amazonlinux:1 tail -f /dev/null
 }
 
 build_pack () {
