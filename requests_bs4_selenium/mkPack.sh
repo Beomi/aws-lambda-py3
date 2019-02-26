@@ -15,10 +15,10 @@ remove_container () {
 }
 
 main () {
-    # run_container
+    run_container
     build_pack
-    # stop_container
-    # remove_container
+    stop_container
+    remove_container
 }
 
 main
