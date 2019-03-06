@@ -2,7 +2,7 @@
 
 ## Pre compiled python3 packages for AWS Lambda Layers
 
-This repo was made by inspire with [ryfeus](https://github.com/ryfeus)'s [lambda-packs](https://github.com/ryfeus/lambda-packs)
+This project is highly inspired by [ryfeus](https://github.com/ryfeus)'s [lambda-packs](https://github.com/ryfeus/lambda-packs)
 
 ## Function configures
 
@@ -10,9 +10,9 @@ This repo was made by inspire with [ryfeus](https://github.com/ryfeus)'s [lambda
 
 ## Supporting packages
 
-- requests + bs4
-- lxml
+- requests + bs4 + lxml
 - selenium + PhantomJS
+- pytorch
 
 ## How to use
 
@@ -145,3 +145,61 @@ Sample Event:
 
 - Memory: 256MB
 - Timeout: 15s
+
+### PyTorch
+
+#### Description
+
+Facebook's pytorch
+
+#### Packages version
+
+- pytorch(cpu) 1.0.1
+- torchvision
+
+All requirements are installed together.
+
+#### Suggested configure
+
+- Memory: 256MB(min) ~ Vary by model size
+- Timeout: 15s ~ Vary by computing speed
+
+#### Sample code
+
+- Sample code to check torch is available
+
+```python
+import json
+import torch
+from torch import nn
+
+def lambda_handler(event, context):
+    # TODO implement
+    print('SYS.PATH: ', sys.path) 
+    print('CUDA?', torch.cuda.is_available())
+
+    print(nn)
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Hello from Lambda!')
+    }
+```
+
+- Sample Response:
+
+```
+Response:
+{
+  "statusCode": 200,
+  "body": "\"Hello from Lambda!\""
+}
+```
+
+- Sample log:
+
+```
+START RequestId: 6ad2645a-f2fd-468e-b682-xxxxxxxxx Version: $LATEST
+SYS.PATH:  ['/var/task', '/opt/python/lib/python3.6/site-packages', '/opt/python', '/var/runtime', '/var/runtime/awslambda', '/var/lang/lib/python36.zip', '/var/lang/lib/python3.6', '/var/lang/lib/python3.6/lib-dynload', '/var/lang/lib/python3.6/site-packages', '/opt/python/lib/python3.6/site-packages']
+CUDA? False
+<module 'torch.nn' from '/opt/python/torch/nn/__init__.py'>
+```
