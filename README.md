@@ -1,37 +1,35 @@
 # aws-lambda-py3
 
-## Pre compiled python3 packages for AWS Lambda
+## Pre compiled python3 packages for AWS Lambda Layers
 
 This repo was made by inspire with [ryfeus](https://github.com/ryfeus)'s [lambda-packs](https://github.com/ryfeus/lambda-packs)
 
 ## Function configures
 
 - Runtime: Python3.6
-- Handler: lambda_function.lambda_handler (default)
-
-> Handler means `python_file_name.function_name`
 
 ## Supporting packages
 
 - requests + bs4
-- requests + bs4 + lxml
-- requests + bs4 + selenium + PhantomJS
+- lxml
+- selenium + PhantomJS
 
 ## How to use
 
-### (Easy) Case1: All you need is here & just want to edit python file only.
+### Easy version (Recommended for most users)
 
-- Clone this repo or Download with zip file.
-- Enter package named directory which you want to use.
-- Unpack `pack.zip` to `pack` directory.
-- Edit function `lambda_handler` in python file named `lambda_function.py`.
-- Zip all **FILES**(remember NOT directory!) in `pack` folder.
-- Upload zipped files to AWS Lambda function.
+All you need is here & just want to edit python file only.
+
+- Clone this repo or Download zip file (what you want to use)
+- Upload zip file to AWS Lambda Layer.
+- Use created Lambda Layer on your Lambda function.
 - Save lambda function, and you're good to go!
 
 > You don't have to care about other files... like `*.sh` files.
 
-### (Hard) Case2: Need more packages or use custom data structure.
+### Hard version (Recommended for developers)
+
+If you want to use "Another" packages, consider using template script.
 
 You need `docker` to compile your own packages to build with.
 
@@ -78,39 +76,6 @@ You can run 1 lambda function upto 5min(600s), if your work last more than 5min,
 You can run lambda functions upto 1000 at a time. But this is soft limit so you can increase with AWS issue ticket.
 
 ## Packages
-
-### requests + bs4
-
-#### Description
-
-Package for crawling static HTML with requests & parsing HTML with BeautifulSoup.
-
-Demo code returns first result's title from google search.
-
-Sample Event: 
-
-```python
-# Sample
-## Input Event object
-{
-  "keyword": "linear+algebra"
-}
-
-## Return value
-{
-  "title": "선형대수학 - 위키백과, 우리 모두의 백과사전"
-}
-```
-
-#### Packages version
-
-- requests 2.18.4
-- beautifulsoup4 4.6.0 (with bs4 0.0.1)
-
-#### Suggested Configure
-
-- Memory: 128M (minimum)
-- Timeout: 5s
 
 ### requests + bs4 + lxml
 
