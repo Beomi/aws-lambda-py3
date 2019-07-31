@@ -1,1 +1,1 @@
-docker build -t lambda-twint .
+docker build -t lambda-twint . --no-cache

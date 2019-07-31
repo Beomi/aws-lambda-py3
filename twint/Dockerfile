@@ -21,7 +21,8 @@ RUN find . -name \*.pyc -delete
 # RUN ls
 RUN echo "stripped size $(du -sh /app/packs | cut -f1)"
 
-RUN cp -R /app/packs/lib/python3.6/site-packages/* /app/python
+RUN cp -R /app/packs/lib /app/python/lib
+RUN cp -R /app/packs/bin/* /app/python
 
 RUN zip -FS -r1 /app/pack.zip python > /dev/null
 RUN echo "compressed size $(du -sh /app/pack.zip | cut -f1)"
