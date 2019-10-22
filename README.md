@@ -203,3 +203,17 @@ SYS.PATH:  ['/var/task', '/opt/python/lib/python3.6/site-packages', '/opt/python
 CUDA? False
 <module 'torch.nn' from '/opt/python/torch/nn/__init__.py'>
 ```
+
+### Tweepy
+
+An easy-to-use Python library for accessing the Twitter API.
+
+Site: https://www.tweepy.org/
+
+#### Supported Versions
+
+- Python
+  - 3.6 (Maybe)
+  - 3.7 (Tested)
+- Tweepy
+  - 3.8.0
