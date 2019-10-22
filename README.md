@@ -229,3 +229,17 @@ Site: https://github.com/orenovadia/pandas_explode
   - 3.7 (Tested)
 - pandas_explode
   - 0.0.6
+
+### Pandas
+
+Python Data Analysis Library
+
+Site: https://pandas.pydata.org/
+
+#### Supported Versions
+
+- Python
+  - 3.6 (Maybe)
+  - 3.7 (Tested)
+- Pandas
+  - 0.25.2
