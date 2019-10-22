@@ -217,3 +217,15 @@ Site: https://www.tweepy.org/
   - 3.7 (Tested)
 - Tweepy
   - 3.8.0
+
+### Pandas Explode
+
+Site: https://github.com/orenovadia/pandas_explode
+
+#### Supported Versions
+
+- Python
+  - 3.6 (Maybe)
+  - 3.7 (Tested)
+- pandas_explode
+  - 0.0.6
